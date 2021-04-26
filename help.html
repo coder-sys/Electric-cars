@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCp1CgmimofmcEOuYl-1mJ38nlnM4_dLno",
+    authDomain: "help-33475.firebaseapp.com",
+    projectId: "help-33475",
+    storageBucket: "help-33475.appspot.com",
+    messagingSenderId: "846986694502",
+    appId: "1:846986694502:web:fd09ef68e099684d4c42a7"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+<script>
+    function submit(){
+        let database = firebase.database()
+        database.ref(document.getElementById('name').value).set({
+            problem:document.getElementById('content').value
+        })
+    }
+    </script>
+<style>
+    body{
+        background-image: url(rr.jpg);
+    }
+    input{
+        border:none;
+        padding:14px 20px;
+        color:rgb(4, 4, 70);
+        background-color:white
+    }
+    button{
+        background-color: white;
+        color:darkblue;
+        padding:13px 15px;
+        border:none;
+    }
+    </style>
+<head align='center'>
+
+</head>
+<body align='center'>
+    <input type="text" id='name' name='name' placeholder="name"><br><br>
+
+<textarea id="content" name='content' placeholder="Report issue or ask a queestion" rows="30" cols="60"></textarea><br><br>
+<button onclick='submit()'>Submit</button>
+    </body>
+</html>
